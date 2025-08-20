@@ -56,7 +56,7 @@ export default function WaterWidget() {
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke="#1976D2"
+            stroke="var(--text-secondary)"
             strokeWidth={stroke}
             fill="none"
             strokeDasharray={circumference}

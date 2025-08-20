@@ -13,7 +13,7 @@ import { REMINDER_TYPES } from '../RemindersContext';
  */
 export default function ReminderList({ reminders, onEdit, onDelete, onToggle, deletingId }) {
   if (!reminders?.length) {
-    return <p style={{ color: '#555', marginTop: 8 }}>No reminders yet. Create one to get started!</p>;
+    return <p style={{ color: 'var(--text-secondary)', opacity: 0.8, marginTop: 8 }}>No reminders yet. Create one to get started!</p>;
   }
 
   const labelForType = (t) => {

@@ -33,7 +33,7 @@ export default function MealList({ meals, onEdit, onDelete, deletingId }) {
         <>
           <div className="card" style={{ display: 'flex', gap: 16, justifyContent: 'space-between', alignItems: 'center' }}>
             <strong>Totals</strong>
-            <div style={{ color: '#555' }}>
+            <div style={{ color: 'var(--text-secondary)', opacity: 0.8 }}>
               <span>Calories: {totals.calories}</span> • <span>P: {totals.protein}g</span> • <span>C: {totals.carbs}g</span> • <span>F: {totals.fats}g</span>
             </div>
           </div>

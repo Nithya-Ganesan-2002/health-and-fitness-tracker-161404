@@ -11,7 +11,7 @@ import React from 'react';
  */
 export default function WorkoutList({ sessions, onEdit, onDelete, deletingId }) {
   if (!sessions?.length) {
-    return <p style={{ color: '#555', marginTop: 8 }}>No workouts yet. Start by adding one!</p>;
+    return <p style={{ color: 'var(--text-secondary)', opacity: 0.8, marginTop: 8 }}>No workouts yet. Start by adding one!</p>;
   }
 
   return (

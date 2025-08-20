@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AuthProvider } from './auth/AuthContext';
 import { createAuthApi } from './auth/api';
@@ -24,32 +24,22 @@ import { AchievementsProvider } from './achievements/AchievementsContext';
 import AchievementsPage from './pages/AchievementsPage';
 import CalendarPage from './pages/CalendarPage';
 import SharingPage from './pages/SharingPage';
+import ThemeToggle from './theme/ThemeToggle';
 
 // PUBLIC_INTERFACE
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  // Effect to apply theme to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
-
   const api = createAuthApi();
 
   return (
     <div className="App">
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-      >
-        {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-      </button>
+      <header className="app-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '.75rem' }}>
+          <span role="img" aria-label="FitTrack">🏃‍♂️</span>
+          <strong>FitTrack</strong>
+        </div>
+        <ThemeToggle />
+      </header>
+
       <AuthProvider api={api}>
         <WorkoutProvider>
           <NutritionProvider>
