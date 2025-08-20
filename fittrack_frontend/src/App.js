@@ -13,6 +13,8 @@ import WorkoutsPage from './pages/WorkoutsPage';
 import { WorkoutProvider } from './workouts/WorkoutContext';
 import { NutritionProvider } from './nutrition/NutritionContext';
 import NutritionPage from './pages/NutritionPage';
+import GoalsPage from './pages/GoalsPage';
+import { GoalsProvider } from './goals/GoalsContext';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -42,38 +44,48 @@ function App() {
       <AuthProvider api={api}>
         <WorkoutProvider>
           <NutritionProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <ProtectedRoute>
-                      <HomePage />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/workouts"
-                  element={
-                    <ProtectedRoute>
-                      <WorkoutsPage />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route
-                  path="/nutrition"
-                  element={
-                    <ProtectedRoute>
-                      <NutritionPage />
-                    </ProtectedRoute>
-                  }
-                />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                <Route path="/reset-password" element={<ResetPasswordPage />} />
-              </Routes>
-            </BrowserRouter>
+            <GoalsProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <ProtectedRoute>
+                        <HomePage />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/workouts"
+                    element={
+                      <ProtectedRoute>
+                        <WorkoutsPage />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/nutrition"
+                    element={
+                      <ProtectedRoute>
+                        <NutritionPage />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/goals"
+                    element={
+                      <ProtectedRoute>
+                        <GoalsPage />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/signup" element={<SignupPage />} />
+                  <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                  <Route path="/reset-password" element={<ResetPasswordPage />} />
+                </Routes>
+              </BrowserRouter>
+            </GoalsProvider>
           </NutritionProvider>
         </WorkoutProvider>
       </AuthProvider>
