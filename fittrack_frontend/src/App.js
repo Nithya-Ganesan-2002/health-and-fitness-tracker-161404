@@ -18,6 +18,8 @@ import { GoalsProvider } from './goals/GoalsContext';
 import ProgressDashboardPage from './pages/ProgressDashboardPage';
 import RemindersPage from './pages/RemindersPage';
 import { RemindersProvider } from './reminders/RemindersContext';
+import WaterPage from './pages/WaterPage';
+import { WaterProvider } from './water/WaterContext';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -49,8 +51,9 @@ function App() {
           <NutritionProvider>
             <GoalsProvider>
               <RemindersProvider>
-                <BrowserRouter>
-                  <Routes>
+                <WaterProvider>
+                  <BrowserRouter>
+                    <Routes>
                     <Route
                       path="/"
                       element={
@@ -99,12 +102,21 @@ function App() {
                         </ProtectedRoute>
                       }
                     />
+                    <Route
+                      path="/water"
+                      element={
+                        <ProtectedRoute>
+                          <WaterPage />
+                        </ProtectedRoute>
+                      }
+                    />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<SignupPage />} />
                     <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                     <Route path="/reset-password" element={<ResetPasswordPage />} />
-                  </Routes>
-                </BrowserRouter>
+                    </Routes>
+                  </BrowserRouter>
+                </WaterProvider>
               </RemindersProvider>
             </GoalsProvider>
           </NutritionProvider>
