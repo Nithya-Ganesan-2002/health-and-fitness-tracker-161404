@@ -3,6 +3,8 @@ import { WorkoutContext } from '../workouts/WorkoutContext';
 import { NutritionContext } from '../nutrition/NutritionContext';
 import { GoalsContext } from '../goals/GoalsContext';
 import { AchievementsWidget, CaloriesTrendWidget, MacrosSplitWidget, WorkoutDurationWidget, WorkoutVolumeWidget } from '../dashboard/components/widgets';
+import { AchievementsContext } from '../achievements/AchievementsContext';
+import AchievementCelebration from '../achievements/components/AchievementCelebration';
 
 /**
  * PUBLIC_INTERFACE
@@ -13,6 +15,7 @@ export default function ProgressDashboardPage() {
   const { sessions, loading: wl } = useContext(WorkoutContext);
   const { meals, loading: nl } = useContext(NutritionContext);
   const { goals } = useContext(GoalsContext);
+  const { badges, newlyUnlocked, markCelebrationsSeen, progress } = useContext(AchievementsContext);
 
   const wSessions = useMemo(() => sessions || [], [sessions]);
   const nMeals = useMemo(() => meals || [], [meals]);
@@ -22,6 +25,11 @@ export default function ProgressDashboardPage() {
       <h1>Progress Dashboard</h1>
       <h2 style={{ marginBottom: 8 }}>Your recent trends and stats</h2>
       {(wl || nl) && <div className="card" style={{ marginBottom: 12 }}>Loading data…</div>}
+      {/* Celebration banner for new achievements */}
+      <AchievementCelebration
+        badges={badges.filter((b) => newlyUnlocked.includes(b.id))}
+        onClose={markCelebrationsSeen}
+      />
 
       <div
         style={{

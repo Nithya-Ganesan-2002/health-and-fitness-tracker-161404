@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import { AuthProvider } from './auth/AuthContext';
 import { createAuthApi } from './auth/api';
@@ -20,6 +20,8 @@ import RemindersPage from './pages/RemindersPage';
 import { RemindersProvider } from './reminders/RemindersContext';
 import WaterPage from './pages/WaterPage';
 import { WaterProvider } from './water/WaterContext';
+import { AchievementsProvider } from './achievements/AchievementsContext';
+import AchievementsPage from './pages/AchievementsPage';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -52,70 +54,80 @@ function App() {
             <GoalsProvider>
               <RemindersProvider>
                 <WaterProvider>
-                  <BrowserRouter>
-                    <Routes>
-                    <Route
-                      path="/"
-                      element={
-                        <ProtectedRoute>
-                          <HomePage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/workouts"
-                      element={
-                        <ProtectedRoute>
-                          <WorkoutsPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/nutrition"
-                      element={
-                        <ProtectedRoute>
-                          <NutritionPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/goals"
-                      element={
-                        <ProtectedRoute>
-                          <GoalsPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/dashboard"
-                      element={
-                        <ProtectedRoute>
-                          <ProgressDashboardPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/reminders"
-                      element={
-                        <ProtectedRoute>
-                          <RemindersPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route
-                      path="/water"
-                      element={
-                        <ProtectedRoute>
-                          <WaterPage />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/signup" element={<SignupPage />} />
-                    <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                    <Route path="/reset-password" element={<ResetPasswordPage />} />
-                    </Routes>
-                  </BrowserRouter>
+                  <AchievementsProvider>
+                    <BrowserRouter>
+                      <Routes>
+                        <Route
+                          path="/"
+                          element={
+                            <ProtectedRoute>
+                              <HomePage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/dashboard"
+                          element={
+                            <ProtectedRoute>
+                              <ProgressDashboardPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/achievements"
+                          element={
+                            <ProtectedRoute>
+                              <AchievementsPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/workouts"
+                          element={
+                            <ProtectedRoute>
+                              <WorkoutsPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/nutrition"
+                          element={
+                            <ProtectedRoute>
+                              <NutritionPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/goals"
+                          element={
+                            <ProtectedRoute>
+                              <GoalsPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/reminders"
+                          element={
+                            <ProtectedRoute>
+                              <RemindersPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/water"
+                          element={
+                            <ProtectedRoute>
+                              <WaterPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/signup" element={<SignupPage />} />
+                        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                        <Route path="/reset-password" element={<ResetPasswordPage />} />
+                      </Routes>
+                    </BrowserRouter>
+                  </AchievementsProvider>
                 </WaterProvider>
               </RemindersProvider>
             </GoalsProvider>

@@ -19,6 +19,7 @@ This is the React-based frontend for FitTrack. It now includes initial User Auth
 ## Workout Logging
 
 - `/workouts` — manage workout sessions (add, edit, delete)
+- `/achievements` — view earned badges and current progress (dev-mode achievements with localStorage persistence)
 - The frontend includes a WorkoutContext and a dev-mode in-memory API (disabled when `REACT_APP_API_BASE_URL` is provided).
 - To connect to a backend, implement `/workouts` REST endpoints:
   - GET `/workouts` — list sessions

@@ -33,6 +33,9 @@ export default function HomePage() {
           <Link to="/water" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#1976D2' }}>
             Hydration
           </Link>
+          <Link to="/achievements" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#43A047' }}>
+            Achievements
+          </Link>
           <button className="btn" onClick={logout}>Logout</button>
         </div>
       </div>

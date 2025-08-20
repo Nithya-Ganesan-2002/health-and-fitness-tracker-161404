@@ -49,6 +49,8 @@ export function MacrosSplitWidget({ meals }) {
 
 // PUBLIC_INTERFACE
 export function AchievementsWidget({ sessions, meals, goals }) {
+  // Backward-compatible widget using existing computeAchievements,
+  // now primarily superseded by AchievementsContext. Keep as-is for reuse in pages lacking provider.
   const { badges, hints, workoutsThisWeek, workoutStreakDays } = computeAchievements({ sessions, meals, goals });
 
   return (
