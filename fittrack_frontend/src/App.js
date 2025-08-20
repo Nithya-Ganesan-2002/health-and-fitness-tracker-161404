@@ -11,6 +11,8 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 import WorkoutsPage from './pages/WorkoutsPage';
 import { WorkoutProvider } from './workouts/WorkoutContext';
+import { NutritionProvider } from './nutrition/NutritionContext';
+import NutritionPage from './pages/NutritionPage';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -39,30 +41,40 @@ function App() {
       </button>
       <AuthProvider api={api}>
         <WorkoutProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <ProtectedRoute>
-                    <HomePage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/workouts"
-                element={
-                  <ProtectedRoute>
-                    <WorkoutsPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/signup" element={<SignupPage />} />
-              <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-              <Route path="/reset-password" element={<ResetPasswordPage />} />
-            </Routes>
-          </BrowserRouter>
+          <NutritionProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <ProtectedRoute>
+                      <HomePage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/workouts"
+                  element={
+                    <ProtectedRoute>
+                      <WorkoutsPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/nutrition"
+                  element={
+                    <ProtectedRoute>
+                      <NutritionPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                <Route path="/reset-password" element={<ResetPasswordPage />} />
+              </Routes>
+            </BrowserRouter>
+          </NutritionProvider>
         </WorkoutProvider>
       </AuthProvider>
     </div>

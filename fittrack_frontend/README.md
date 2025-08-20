@@ -26,6 +26,16 @@ This is the React-based frontend for FitTrack. It now includes initial User Auth
   - PUT `/workouts/{id}` — update session
   - DELETE `/workouts/{id}` — delete session
 
+## Nutrition Tracking
+
+- `/nutrition` — manage meal logs (add, edit, delete) with calories and macronutrients (protein/carbs/fats) and timestamp.
+- The frontend includes a NutritionContext and a dev-mode in-memory API (disabled when `REACT_APP_API_BASE_URL` is provided).
+- To connect to a backend, implement `/nutrition/meals` REST endpoints:
+  - GET `/nutrition/meals` — list meals
+  - POST `/nutrition/meals` — add meal (expects: { name, calories, protein, carbs, fats, dateTime })
+  - PUT `/nutrition/meals/{id}` — update meal
+  - DELETE `/nutrition/meals/{id}` — delete meal
+
 ## Notes
 
 - The `src/auth/api.js` file contains endpoint placeholders. Replace the paths with your backend endpoints and remove the mock responses by providing `REACT_APP_API_BASE_URL`.

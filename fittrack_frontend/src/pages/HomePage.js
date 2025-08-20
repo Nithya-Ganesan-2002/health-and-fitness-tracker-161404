@@ -14,9 +14,12 @@ export default function HomePage() {
       <h1>Welcome to FitTrack</h1>
       <div style={{ marginTop: 12 }}>
         <p>You are signed in as {user?.name || user?.email || 'User'}.</p>
-        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+        <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
           <Link to="/workouts" className="btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
             Go to Workouts
+          </Link>
+          <Link to="/nutrition" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: 'var(--success-text)' }}>
+            Go to Nutrition
           </Link>
           <button className="btn" onClick={logout}>Logout</button>
         </div>
