@@ -177,6 +177,11 @@ export default function CalendarPage() {
     <div className="auth-container" style={{ maxWidth: 1000 }}>
       <h1>Calendar</h1>
       <h2>Overview of your workouts and nutrition</h2>
+      <div style={{ margin: '8px 0 12px' }}>
+        <a href="/share" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#43A047' }}>
+          Share / Export This Month
+        </a>
+      </div>
 
       <div style={{ marginTop: 10 }}>
         <CalendarGrid

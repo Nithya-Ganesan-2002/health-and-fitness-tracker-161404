@@ -23,6 +23,7 @@ import { WaterProvider } from './water/WaterContext';
 import { AchievementsProvider } from './achievements/AchievementsContext';
 import AchievementsPage from './pages/AchievementsPage';
 import CalendarPage from './pages/CalendarPage';
+import SharingPage from './pages/SharingPage';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -127,6 +128,14 @@ function App() {
                           element={
                             <ProtectedRoute>
                               <CalendarPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/share"
+                          element={
+                            <ProtectedRoute>
+                              <SharingPage />
                             </ProtectedRoute>
                           }
                         />

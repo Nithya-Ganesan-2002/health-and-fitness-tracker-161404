@@ -39,6 +39,9 @@ export default function HomePage() {
           <Link to="/calendar" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#6c757d' }}>
             Calendar
           </Link>
+          <Link to="/share" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#1b5e20' }}>
+            Social Sharing
+          </Link>
           <button className="btn" onClick={logout}>Logout</button>
         </div>
       </div>
