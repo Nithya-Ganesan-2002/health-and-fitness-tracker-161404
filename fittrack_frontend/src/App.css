@@ -4,10 +4,14 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #282c34;
-  --text-secondary: #61dafb;
+  --text-secondary: #1976D2; /* align to FitTrack primary */
   --border-color: #e9ecef;
-  --button-bg: #007bff;
+  --button-bg: #1976D2; /* FitTrack primary */
   --button-text: #ffffff;
+  --success-bg: #e7f5ea;
+  --success-text: #2e7d32;
+  --error-bg: #fdecea;
+  --error-text: #c62828;
 }
 
 [data-theme="dark"] {
@@ -101,4 +105,101 @@
     padding: 8px 16px;
     font-size: 12px;
   }
+}
+
+/* Auth pages */
+.auth-container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  text-align: left;
+}
+
+.auth-container h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  color: var(--text-primary);
+}
+
+.auth-container h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.auth-form label {
+  font-size: 13px;
+  color: #555;
+}
+
+.auth-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: var(--text-secondary);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.btn {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.auth-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.auth-error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #f5c6cb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.auth-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid #c8e6c9;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin: 8px 0;
 }

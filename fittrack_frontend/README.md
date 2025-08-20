@@ -1,3 +1,27 @@
+# FitTrack Frontend
+
+This is the React-based frontend for FitTrack. It now includes initial User Authentication (signup, login, logout, password reset) UI and flows ready to connect to backend APIs.
+
+## Auth Setup
+
+- Configure environment variables in `.env` (see `.env.example`):
+  - `REACT_APP_API_BASE_URL` — base URL of your backend (leave empty to use dev-mode mock responses).
+  - `REACT_APP_SITE_URL` — public site URL used for password reset redirect links (default http://localhost:3000).
+
+## Auth Routes
+
+- `/login` — user login
+- `/signup` — create a new account
+- `/forgot-password` — request reset link
+- `/reset-password?token=...` — complete password reset
+- `/` — protected home page (example), redirects to login if not authenticated
+
+## Notes
+
+- The `src/auth/api.js` file contains endpoint placeholders. Replace the paths with your backend endpoints and remove the mock responses by providing `REACT_APP_API_BASE_URL`.
+- Auth state is provided via `AuthContext`. Use it to guard routes and access `user`, `isAuthenticated`, and actions (`login`, `signup`, `logout`, etc.).
+- Styling is minimal and extends `src/App.css`.
+
 # Lightweight React Template for KAVIA
 
 This project provides a minimal React template with a clean, modern UI and minimal dependencies.
