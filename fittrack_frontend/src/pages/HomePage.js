@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../auth/AuthContext';
 
 /**
@@ -13,7 +14,12 @@ export default function HomePage() {
       <h1>Welcome to FitTrack</h1>
       <div style={{ marginTop: 12 }}>
         <p>You are signed in as {user?.name || user?.email || 'User'}.</p>
-        <button className="btn" onClick={logout}>Logout</button>
+        <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+          <Link to="/workouts" className="btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+            Go to Workouts
+          </Link>
+          <button className="btn" onClick={logout}>Logout</button>
+        </div>
       </div>
     </div>
   );

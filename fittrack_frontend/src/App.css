@@ -57,6 +57,14 @@
   position: relative;
 }
 
+/* Helper background for cards */
+.card {
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
 .App-link {
   color: var(--text-secondary);
   transition: color 0.3s ease;

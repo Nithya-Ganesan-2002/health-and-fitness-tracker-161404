@@ -16,6 +16,16 @@ This is the React-based frontend for FitTrack. It now includes initial User Auth
 - `/reset-password?token=...` — complete password reset
 - `/` — protected home page (example), redirects to login if not authenticated
 
+## Workout Logging
+
+- `/workouts` — manage workout sessions (add, edit, delete)
+- The frontend includes a WorkoutContext and a dev-mode in-memory API (disabled when `REACT_APP_API_BASE_URL` is provided).
+- To connect to a backend, implement `/workouts` REST endpoints:
+  - GET `/workouts` — list sessions
+  - POST `/workouts` — add session (expects: { date, exerciseType, reps, sets, durationMinutes, notes })
+  - PUT `/workouts/{id}` — update session
+  - DELETE `/workouts/{id}` — delete session
+
 ## Notes
 
 - The `src/auth/api.js` file contains endpoint placeholders. Replace the paths with your backend endpoints and remove the mock responses by providing `REACT_APP_API_BASE_URL`.
