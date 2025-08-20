@@ -1,12 +1,16 @@
 # FitTrack Frontend
 
-This is the React-based frontend for FitTrack. It now includes initial User Authentication (signup, login, logout, password reset) UI and flows ready to connect to backend APIs.
+This is the React-based frontend for FitTrack. It now includes:
+- User Authentication (signup, login, logout, password reset) UI and flows
+- Dark/Light mode with global ThemeContext and persisted preference
+- Cross-device synchronization via WebSocket (if configured) with periodic polling fallback
 
-## Auth Setup
+## Environment Setup
 
 - Configure environment variables in `.env` (see `.env.example`):
   - `REACT_APP_API_BASE_URL` — base URL of your backend (leave empty to use dev-mode mock responses).
   - `REACT_APP_SITE_URL` — public site URL used for password reset redirect links (default http://localhost:3000).
+  - `REACT_APP_WS_URL` — WebSocket URL for real-time updates (e.g., wss://api.example.com/ws). Optional; if omitted, app uses periodic HTTP polling every 30s when API base is set.
 
 ## Auth Routes
 
