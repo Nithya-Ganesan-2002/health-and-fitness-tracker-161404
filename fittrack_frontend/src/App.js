@@ -16,6 +16,8 @@ import NutritionPage from './pages/NutritionPage';
 import GoalsPage from './pages/GoalsPage';
 import { GoalsProvider } from './goals/GoalsContext';
 import ProgressDashboardPage from './pages/ProgressDashboardPage';
+import RemindersPage from './pages/RemindersPage';
+import { RemindersProvider } from './reminders/RemindersContext';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -46,54 +48,64 @@ function App() {
         <WorkoutProvider>
           <NutritionProvider>
             <GoalsProvider>
-              <BrowserRouter>
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <ProtectedRoute>
-                        <HomePage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/workouts"
-                    element={
-                      <ProtectedRoute>
-                        <WorkoutsPage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/nutrition"
-                    element={
-                      <ProtectedRoute>
-                        <NutritionPage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/goals"
-                    element={
-                      <ProtectedRoute>
-                        <GoalsPage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route
-                    path="/dashboard"
-                    element={
-                      <ProtectedRoute>
-                        <ProgressDashboardPage />
-                      </ProtectedRoute>
-                    }
-                  />
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/signup" element={<SignupPage />} />
-                  <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                  <Route path="/reset-password" element={<ResetPasswordPage />} />
-                </Routes>
-              </BrowserRouter>
+              <RemindersProvider>
+                <BrowserRouter>
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
+                        <ProtectedRoute>
+                          <HomePage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/workouts"
+                      element={
+                        <ProtectedRoute>
+                          <WorkoutsPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/nutrition"
+                      element={
+                        <ProtectedRoute>
+                          <NutritionPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/goals"
+                      element={
+                        <ProtectedRoute>
+                          <GoalsPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/dashboard"
+                      element={
+                        <ProtectedRoute>
+                          <ProgressDashboardPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/reminders"
+                      element={
+                        <ProtectedRoute>
+                          <RemindersPage />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/signup" element={<SignupPage />} />
+                    <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                    <Route path="/reset-password" element={<ResetPasswordPage />} />
+                  </Routes>
+                </BrowserRouter>
+              </RemindersProvider>
             </GoalsProvider>
           </NutritionProvider>
         </WorkoutProvider>

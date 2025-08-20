@@ -27,6 +27,9 @@ export default function HomePage() {
           <Link to="/goals" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#FFB300', color: '#000' }}>
             Set Goals
           </Link>
+          <Link to="/reminders" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#8E24AA' }}>
+            Reminders
+          </Link>
           <button className="btn" onClick={logout}>Logout</button>
         </div>
       </div>
