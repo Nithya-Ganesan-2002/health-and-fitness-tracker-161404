@@ -15,6 +15,9 @@ export default function HomePage() {
       <div style={{ marginTop: 12 }}>
         <p>You are signed in as {user?.name || user?.email || 'User'}.</p>
         <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+          <Link to="/dashboard" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#1976D2' }}>
+            View Dashboard
+          </Link>
           <Link to="/workouts" className="btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
             Go to Workouts
           </Link>

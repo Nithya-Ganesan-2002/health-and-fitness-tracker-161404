@@ -65,6 +65,22 @@
   padding: 12px 14px;
 }
 
+/* Dashboard specific helpers */
+.dashboard-grid {
+  display: grid;
+  gap: 12px;
+}
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 900px) {
+  .dashboard-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .App-link {
   color: var(--text-secondary);
   transition: color 0.3s ease;

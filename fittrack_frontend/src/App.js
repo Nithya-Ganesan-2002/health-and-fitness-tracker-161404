@@ -15,6 +15,7 @@ import { NutritionProvider } from './nutrition/NutritionContext';
 import NutritionPage from './pages/NutritionPage';
 import GoalsPage from './pages/GoalsPage';
 import { GoalsProvider } from './goals/GoalsContext';
+import ProgressDashboardPage from './pages/ProgressDashboardPage';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -76,6 +77,14 @@ function App() {
                     element={
                       <ProtectedRoute>
                         <GoalsPage />
+                      </ProtectedRoute>
+                    }
+                  />
+                  <Route
+                    path="/dashboard"
+                    element={
+                      <ProtectedRoute>
+                        <ProgressDashboardPage />
                       </ProtectedRoute>
                     }
                   />
