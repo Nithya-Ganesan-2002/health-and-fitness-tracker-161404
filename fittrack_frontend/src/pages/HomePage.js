@@ -36,6 +36,9 @@ export default function HomePage() {
           <Link to="/achievements" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#43A047' }}>
             Achievements
           </Link>
+          <Link to="/calendar" className="btn" style={{ textDecoration: 'none', display: 'inline-block', background: '#6c757d' }}>
+            Calendar
+          </Link>
           <button className="btn" onClick={logout}>Logout</button>
         </div>
       </div>

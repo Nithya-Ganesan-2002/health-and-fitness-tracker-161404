@@ -22,6 +22,7 @@ import WaterPage from './pages/WaterPage';
 import { WaterProvider } from './water/WaterContext';
 import { AchievementsProvider } from './achievements/AchievementsContext';
 import AchievementsPage from './pages/AchievementsPage';
+import CalendarPage from './pages/CalendarPage';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -118,6 +119,14 @@ function App() {
                           element={
                             <ProtectedRoute>
                               <WaterPage />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/calendar"
+                          element={
+                            <ProtectedRoute>
+                              <CalendarPage />
                             </ProtectedRoute>
                           }
                         />
